@@ -1025,6 +1025,11 @@ function select_preset()
                         ) {
                             $value = str_replace($sep, '.', $value);
                         }
+                        if ($value === ''
+                            && in_array($fieldDef['type'], ['INT', 'LIST'])
+                        ) {
+                            $value = null;
+                        }
                         break;
                     }
                 }
